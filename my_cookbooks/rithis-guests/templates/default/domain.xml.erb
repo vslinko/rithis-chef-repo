@@ -1,0 +1,30 @@
+<domain type="kvm">
+  <name><%= @domain["name"] %></name>
+  <memory><%= @domain["memory"] %></memory>
+  <os>
+    <type>hvm</type>
+  </os>
+  <features>
+    <acpi/>
+  </features>
+  <devices>
+    <disk type="block" device="disk">
+      <source dev="<%= @domain["disk"] %>"/>
+      <target dev="vda"/>
+      <boot order="1"/>
+    </disk>
+    <disk type="file" device="cdrom">
+      <source file="<%= @domain["iso_path"] %>"/>
+      <target dev='hda'/>
+      <boot order="2"/>
+      <readonly/>
+    </disk>
+    <% @domain["interfaces"].each do |network, mac| %>
+    <interface type="network">
+      <mac address="<%= mac %>"/>
+      <source network="<%= network %>"/>
+    </interface>
+    <% end %>
+    <graphics type="vnc" port="<%= @domain["vnc_port"] %>" listen="127.0.0.1"/>
+  </devices>
+</domain>

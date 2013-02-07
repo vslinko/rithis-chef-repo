@@ -41,6 +41,7 @@ SITE
       yum (>= 0.0.0)
     java (1.9.2)
       windows (>= 0.0.0)
+    lvm (0.8.4)
     nginx (1.3.0)
       build-essential (>= 0.0.0)
       ohai (>= 1.1.4)
@@ -63,11 +64,18 @@ SITE
     zlib (2.0.0)
     zsh (1.0.0)
 
+PATH
+  remote: my_cookbooks/rithis-guests
+  specs:
+    rithis-guests (0.0.1)
+      lvm (>= 0.0.0)
+
 DEPENDENCIES
   apt (>= 0)
   chef-server (>= 0)
   git (>= 0)
   ntp (>= 0)
+  rithis-guests (>= 0)
   sudo (>= 0)
   ubuntu (>= 0)
   users (>= 0)

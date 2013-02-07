@@ -1,5 +1,11 @@
 name "host"
-run_list "role[node]", "recipe[chef-server]", "recipe[ntp]"
+
+run_list(
+    "role[node]",
+    "recipe[chef-server]",
+    "recipe[ntp]",
+    "recipe[rithis-guests]"
+)
 
 override_attributes(
     "ntp" => {

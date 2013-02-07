@@ -11,3 +11,5 @@ cookbook "sudo"
 cookbook "ubuntu"
 cookbook "users"
 cookbook "zsh"
+
+cookbook "rithis-guests", :path => "my_cookbooks/rithis-guests"

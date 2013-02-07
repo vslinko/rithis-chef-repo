@@ -1,0 +1,17 @@
+<network>
+  <name><%= @network["name"] %></name>
+  <% if @network["nat"] %>
+  <forward/>
+  <% elsif @network["route"] %>
+  <forward mode="route" dev="<%= @network["route"] %>"/>
+  <% end %>
+  <bridge name="<%= @network["bridge"] %>"/>
+  <ip address="<%= @network["ip"]["address"] %>" netmask="<%= @network["ip"]["netmask"] %>">
+    <dhcp>
+      <range start="<%= @network["dhcp_range"]["start"] %>" end="<%= @network["dhcp_range"]["end"] %>" />
+      <% @network["dhcp_hosts"].each do |host| %>
+      <host mac="<%= host["mac"] %>" name="<%= host["name"] %>" ip="<%= host["ip"] %>" />
+      <% end %>
+    </dhcp>
+  </ip>
+</network>
