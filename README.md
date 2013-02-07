@@ -209,6 +209,8 @@ $ knife configure --defaults --server-url http://144.76.18.85:4000 --admin-clien
 ```
 $ knife cookbook upload --all
 $ knife role from file roles/*
+$ knife data bag create users
+$ knife data bag from file users data_bag/users/*
 ```
 
 Настройте систему:
