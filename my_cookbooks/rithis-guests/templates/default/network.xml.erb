@@ -1,9 +1,9 @@
 <network>
   <name><%= @network["name"] %></name>
-  <% if @network["nat"] %>
-  <forward/>
-  <% elsif @network["route"] %>
-  <forward mode="route" dev="<%= @network["route"] %>"/>
+  <% if @network["forward"]["mode"] == "route" %>
+  <forward mode="route" dev="<%= @network["forward"]["dev"] %>"/>
+  <% elsif @network["forward"]["mode"] %>
+  <forward mode="<%= @network["forward"]["mode"] %>"/>
   <% end %>
   <bridge name="<%= @network["bridge"] %>"/>
   <ip address="<%= @network["ip"]["address"] %>" netmask="<%= @network["ip"]["netmask"] %>">

@@ -218,3 +218,60 @@ $ knife data bag from file users data_bag/users/*
 ```
 $ knife bootstrap 144.76.18.85 --run-list 'role[host]' --ssh-user vyacheslav --sudo
 ```
+
+Скопируйте файлы для аутентификации для OpenVPN на свою систему:
+
+```
+$ scp -r 144.76.18.85:vpn ~/VPN
+```
+
+Подключитесь к OpenVPN установленному на сервере. Используйте ваш любимый
+OpenVPN клиент. Настройки подключения (названия могут не совпадать с вашим
+клиентом):
+
+<table>
+  <tr>
+    <th>Name</th>
+    <td>host0.n.rithis.com</td>
+  </tr>
+  <tr>
+    <th>Address</th>
+    <td>144.76.18.85</td>
+  </tr>
+  <tr>
+    <th>Port</th>
+    <td>1194</td>
+  </tr>
+  <tr>
+    <th>Protocol</th>
+    <td>udp</td>
+  </tr>
+  <tr>
+    <th>Device</th>
+    <td>tun</td>
+  </tr>
+  <tr>
+    <th>CA</th>
+    <td>~/VPN/ca.crt</td>
+  </tr>
+  <tr>
+    <th>Cert</th>
+    <td>~/VPN/vyacheslav.crt</td>
+  </tr>
+  <tr>
+    <th>Key</th>
+    <td>~/VPN/vyacheslav.key</td>
+  </tr>
+  <tr>
+    <th>Enable DNS support</th>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <th>DNS servers</th>
+    <td>192.168.122.1</td>
+  </tr>
+  <tr>
+    <th>DSN domain</th>
+    <td>n.rithis.com</td>
+  </tr>
+</table>

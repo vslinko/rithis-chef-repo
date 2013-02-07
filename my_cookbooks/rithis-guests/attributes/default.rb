@@ -3,7 +3,9 @@ default["rithis-guests"]["iso"] = {
 }
 
 default["rithis-guests"]["networks"]["default"] = {
-    "nat" => true,
+    "forward" => {
+        "mode" => "nat"
+    },
     "bridge" => "virbr0",
     "ip" => {
         "address" => "192.168.122.1",
