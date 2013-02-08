@@ -6,10 +6,11 @@
   <forward mode="<%= @network["forward"]["mode"] %>"/>
   <% end %>
   <bridge name="<%= @network["bridge"] %>"/>
+  <mac address="<%= @network["mac"] %>"/>
   <ip address="<%= @network["ip"]["address"] %>" netmask="<%= @network["ip"]["netmask"] %>">
     <dhcp>
       <range start="<%= @network["dhcp_range"]["start"] %>" end="<%= @network["dhcp_range"]["end"] %>" />
-      <% @network["dhcp_hosts"].each do |host| %>
+      <% @network["hosts"].each do |host| %>
       <host mac="<%= host["mac"] %>" name="<%= host["name"] %>" ip="<%= host["ip"] %>" />
       <% end %>
     </dhcp>

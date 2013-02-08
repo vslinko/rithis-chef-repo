@@ -6,16 +6,11 @@ default["rithis-guests"]["networks"]["default"] = {
     "forward" => {
         "mode" => "nat"
     },
+    "vpn" => false,
     "bridge" => "virbr0",
-    "ip" => {
-        "address" => "192.168.122.1",
-        "netmask" => "255.255.255.0"
-    },
-    "dhcp_range" => {
-        "start" => "192.168.122.2",
-        "end" => "192.168.122.254"
-    },
-    "dhcp_hosts" => []
+    "mac" => "52:54:00:00:00:01",
+    "network" => "192.168.122.0/24",
+    "hosts" => []
 }
 
 default["rithis-guests"]["domains"] = {}

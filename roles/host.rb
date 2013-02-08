@@ -27,10 +27,7 @@ override_attributes(
     "rithis-guests" => {
         "networks" => {
             "default" => {
-                "forward" => {
-                    "mode" => "route",
-                    "dev" => "eth0"
-                }
+                "vpn" => true
             }
         }
     }

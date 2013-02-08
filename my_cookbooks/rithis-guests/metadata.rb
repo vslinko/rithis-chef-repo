@@ -1,5 +1,5 @@
 name "rithis-guests"
-version "0.0.1"
+version "0.0.2"
 
 %w{ubuntu}.each do |os|
     supports os

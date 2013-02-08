@@ -8,11 +8,15 @@
     <acpi/>
   </features>
   <devices>
+    <% @domain["disks"].each do |disk| %>
     <disk type="block" device="disk">
-      <source dev="<%= @domain["disk"] %>"/>
-      <target dev="vda"/>
+      <source dev="<%= disk["source"] %>"/>
+      <target dev="<%= disk["target"] %>"/>
+      <% if disk["bootable"] %>
       <boot order="1"/>
+      <% end %>
     </disk>
+    <% end %>
     <disk type="file" device="cdrom">
       <source file="<%= @domain["iso_path"] %>"/>
       <target dev='hda'/>

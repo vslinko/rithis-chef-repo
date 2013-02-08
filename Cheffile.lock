@@ -68,7 +68,7 @@ SITE
 PATH
   remote: my_cookbooks/rithis-guests
   specs:
-    rithis-guests (0.0.1)
+    rithis-guests (0.0.2)
       lvm (>= 0.0.0)
 
 DEPENDENCIES
