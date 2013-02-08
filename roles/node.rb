@@ -1,10 +1,10 @@
 name "node"
 
 run_list(
+    "recipe[ubuntu]",
     "recipe[apt]",
     "recipe[git]",
     "recipe[sudo]",
-    "recipe[ubuntu]",
     "recipe[users::sysadmins]",
     "recipe[zsh]"
 )
