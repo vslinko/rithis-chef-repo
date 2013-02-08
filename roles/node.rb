@@ -13,7 +13,7 @@ override_attributes(
     "authorization" => {
         "sudo" => {
             "passwordless" => true,
-            "sudoers_defaults" => "env_reset"
+            "sudoers_defaults" => ["env_reset"]
         }
     },
     "ubuntu" => {
